@@ -157,11 +157,24 @@ function operator(expression) {
       switch (step) {
         case "+":
           pushQueue.push(step2 + step1);
+          break;
         case "-":
           pushQueue.push(step2 - step1);
+          break;
+        case "*":
+          pushQueue.push(step2 * step1);
+          break;
+        case "/":
+          pushQueue.push(step2 / step1);
+          break;
       }
       break;
     }
   }
-  console.log(pushQueue);
+  //error if multiple operations in one input
+  if (pushQueue.length > 1) {
+    return (input.value = "Error!");
+  }
+  let answ = pushQueue.toString();
+  input.value = answ;
 }

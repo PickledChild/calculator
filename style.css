@@ -19,6 +19,7 @@ body {
 }
 
 input {
+  background-color: aliceblue;
   height: 100px;
   margin: 10px;
   padding: 10px;
@@ -37,6 +38,8 @@ input {
 }
 
 button {
+  box-shadow: 3px 3px 3px pink inset;
+  background-color: aliceblue;
   height: 80px;
   width: 100px;
   border-radius: 10px;
@@ -95,4 +98,8 @@ button:active {
 #buttonDiv:active,
 #clear:active {
   background-color: darkred;
+}
+
+#input:focus {
+  outline: none;
 }
