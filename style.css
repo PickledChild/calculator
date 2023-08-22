@@ -9,6 +9,7 @@ body {
 }
 
 #calcBody {
+  box-shadow: 5px 5px 50px darkcyan inset;
   background-image: linear-gradient(#3bb3ff, #e5b067);
   border-radius: 20px;
   height: 600px;
@@ -19,7 +20,8 @@ body {
 }
 
 input {
-  background-color: aliceblue;
+  box-shadow: 5px 5px 5px lightblue inset;
+  background-color: blanchedalmond;
   height: 100px;
   margin: 10px;
   padding: 10px;
@@ -27,6 +29,7 @@ input {
   border-style: none;
   font-size: 72px;
   text-align: right;
+  border: 1px solid darkcyan;
 }
 
 #numWrapper {
@@ -38,13 +41,14 @@ input {
 }
 
 button {
-  box-shadow: 3px 3px 3px pink inset;
-  background-color: aliceblue;
+  box-shadow: 3px 3px 10px lightgrey inset;
+  background-color: thistle;
   height: 80px;
   width: 100px;
   border-radius: 10px;
   border-style: none;
   font-size: 30px;
+  border: 1px solid darkcyan;
 }
 
 button:hover {
@@ -76,11 +80,13 @@ button:active {
 #buttonMult,
 #buttonDiv,
 #clear {
+  box-shadow: 3px 3px 10px palevioletred inset;
   background-color: grey;
   height: 50px;
 }
 
 #clear {
+  box-shadow: 5px 5px 5px lavender inset;
   background-color: wheat;
 }
 
@@ -102,4 +108,19 @@ button:active {
 
 #input:focus {
   outline: none;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    color: red;
+  }
+  50% {
+    color: darkblue;
+  }
+}
+
+h1 {
+  font-size: 50px;
+  animation: pulse 5s infinite;
 }
