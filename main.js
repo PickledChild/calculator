@@ -148,7 +148,7 @@ function operator(expression) {
 
   const pushQueue = [];
   for (let step of queue) {
-    if (step === Number) {
+    if (typeof step === "number") {
       pushQueue.push(step);
     } else {
       //takes last two in queue and preps for operation
@@ -156,13 +156,12 @@ function operator(expression) {
       let step2 = pushQueue.pop();
       switch (step) {
         case "+":
-          pushQueue(step1 + step2);
-          break;
+          pushQueue.push(step2 + step1);
+        case "-":
+          pushQueue.push(step2 - step1);
       }
+      break;
     }
-    return pushQueue[0];
   }
-
-  console.log(queue);
-  console.log(operque);
+  console.log(pushQueue);
 }
