@@ -5,10 +5,11 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  font-family: "Courier New", Courier, monospace;
 }
 
 #calcBody {
-  background-image: linear-gradient(#945a7a, #ff70bf);
+  background-image: linear-gradient(#3bb3ff, #e5b067);
   border-radius: 20px;
   height: 600px;
   width: 500px;
@@ -20,31 +21,71 @@ body {
 input {
   height: 100px;
   margin: 10px;
+  padding: 10px;
   border-radius: 10px;
   border-style: none;
+  font-size: 72px;
+  text-align: right;
 }
 
 #numWrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  column-gap: 10px;
-  row-gap: 10px;
+  grid-template-rows: repeat(4, 1fr);
+  column-gap: 8px;
+  padding: 10px;
 }
 
 button {
-  height: 60px;
+  height: 80px;
   width: 100px;
   border-radius: 10px;
   border-style: none;
+  font-size: 30px;
+}
+
+button:hover {
+  background-color: lightblue;
+}
+
+button:active {
+  background-color: darkcyan;
 }
 
 #inpWrapper {
   display: flex;
   gap: 10px;
+  justify-content: space-around;
 }
 
 #oprWrapper {
   display: grid;
   grid-template-rows: repeat(4, 1fr);
+  gap: 5px;
+}
+
+#buttonEnter {
+  height: 120px;
+}
+
+#buttonAdd,
+#buttonSub,
+#buttonMult,
+#buttonDiv {
+  background-color: grey;
+  height: 70px;
+}
+
+#buttonAdd:hover,
+#buttonSub:hover,
+#buttonMult:hover,
+#buttonDiv:hover {
+  background-color: lightcoral;
+}
+
+#buttonAdd:active,
+#buttonSub:active,
+#buttonMult:active,
+#buttonDiv:active {
+  background-color: darkred;
 }
