@@ -113,4 +113,35 @@ buttonDiv.addEventListener("click", () => {
   input.value = input.value + " / ";
 });
 
+enter.addEventListener("click", () => {
+  let query = input.value;
+  if (query === "0 / 0") {
+    return (input.value = "I don't think so...");
+  }
+  operator(input.value);
+});
+
 //calculator mechanism
+function operator(expression) {
+  const oper = expression.match(/([0-9]+|\+|\-|\*|\/)/g);
+
+  let queue = [];
+  let operque = [];
+
+  for (let step of oper) {
+    if (!isNaN(step)) {
+      queue.push(parseFloat(step));
+    } else {
+      while (operque.length > 0) {
+        queue.push(operque.pop());
+      }
+      operque.push(step);
+    }
+
+    while (operque.length > 0) {
+      queue.push(operque.pop());
+    }
+  }
+  console.log(queue);
+  console.log(operque);
+}
