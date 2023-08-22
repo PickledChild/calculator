@@ -15,6 +15,7 @@ const buttonSub = document.getElementById("buttonSub");
 const buttonMult = document.getElementById("buttonMult");
 const buttonDiv = document.getElementById("buttonDiv");
 const enter = document.getElementById("buttonEnter");
+const clear = document.getElementById("clear");
 
 const input = document.getElementById("input");
 
@@ -90,3 +91,26 @@ button0.addEventListener("click", () => {
   }
   input.value = input.value + 0;
 });
+
+//operation buttons
+clear.addEventListener("click", () => {
+  input.value = 0;
+});
+
+buttonAdd.addEventListener("click", () => {
+  input.value = input.value + " + ";
+});
+
+buttonSub.addEventListener("click", () => {
+  input.value = input.value + " - ";
+});
+
+buttonMult.addEventListener("click", () => {
+  input.value = input.value + " * ";
+});
+
+buttonDiv.addEventListener("click", () => {
+  input.value = input.value + " / ";
+});
+
+//calculator mechanism

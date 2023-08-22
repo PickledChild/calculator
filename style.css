@@ -71,21 +71,28 @@ button:active {
 #buttonAdd,
 #buttonSub,
 #buttonMult,
-#buttonDiv {
+#buttonDiv,
+#clear {
   background-color: grey;
-  height: 70px;
+  height: 50px;
+}
+
+#clear {
+  background-color: wheat;
 }
 
 #buttonAdd:hover,
 #buttonSub:hover,
 #buttonMult:hover,
-#buttonDiv:hover {
+#buttonDiv:hover,
+#clear:hover {
   background-color: lightcoral;
 }
 
 #buttonAdd:active,
 #buttonSub:active,
 #buttonMult:active,
-#buttonDiv:active {
+#buttonDiv:active,
+#clear:active {
   background-color: darkred;
 }
