@@ -125,23 +125,44 @@ enter.addEventListener("click", () => {
 function operator(expression) {
   const oper = expression.match(/([0-9]+|\+|\-|\*|\/)/g);
 
+  //storing numbers
   let queue = [];
+  //storing operations
   let operque = [];
 
+  //iterate through to seperate numbers and
+  //operators
   for (let step of oper) {
     if (!isNaN(step)) {
       queue.push(parseFloat(step));
     } else {
-      while (operque.length > 0) {
-        queue.push(operque.pop());
-      }
       operque.push(step);
     }
-
-    while (operque.length > 0) {
-      queue.push(operque.pop());
-    }
   }
+
+  //push operators in back of queue to handle multiple
+  //operators
+  while (operque.length > 0) {
+    queue.push(operque.pop());
+  }
+
+  const pushQueue = [];
+  for (let step of queue) {
+    if (step === Number) {
+      pushQueue.push(step);
+    } else {
+      //takes last two in queue and preps for operation
+      let step1 = pushQueue.pop();
+      let step2 = pushQueue.pop();
+      switch (step) {
+        case "+":
+          pushQueue(step1 + step2);
+          break;
+      }
+    }
+    return pushQueue[0];
+  }
+
   console.log(queue);
   console.log(operque);
 }
